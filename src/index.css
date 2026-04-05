@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "ZCOOL KuaiLe", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-imperial-red: #ff2a2a;
+  --color-imperial-yellow: #ffe600;
+  --color-imperial-black: #111111;
+  --color-imperial-paper: #f4f4f0;
+  --color-imperial-cyan: #00e5ff;
+}
+
+@layer base {
+  body {
+    @apply bg-imperial-paper text-imperial-black font-sans;
+    background-image: radial-gradient(#111111 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+@layer components {
+  .brutal-box {
+    @apply border-4 border-imperial-black bg-white shadow-[8px_8px_0px_0px_rgba(17,17,17,1)] transition-transform duration-200;
+  }
+  .brutal-box:hover {
+    @apply translate-x-[2px] translate-y-[2px] shadow-[6px_6px_0px_0px_rgba(17,17,17,1)];
+  }
+  .brutal-box:active {
+    @apply translate-x-[8px] translate-y-[8px] shadow-none;
+  }
+  
+  .brutal-button {
+    @apply border-4 border-imperial-black font-bold px-6 py-3 shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] transition-all duration-200 uppercase tracking-widest;
+  }
+  .brutal-button:hover {
+    @apply translate-x-[2px] translate-y-[2px] shadow-[2px_2px_0px_0px_rgba(17,17,17,1)];
+  }
+  .brutal-button:active {
+    @apply translate-x-[4px] translate-y-[4px] shadow-none;
+  }
+  
+  .brutal-input {
+    @apply border-4 border-imperial-black bg-white px-4 py-3 focus:outline-none focus:ring-4 focus:ring-imperial-cyan shadow-[4px_4px_0px_0px_rgba(17,17,17,1)];
+  }
+}
